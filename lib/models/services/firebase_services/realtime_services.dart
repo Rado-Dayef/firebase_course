@@ -19,8 +19,11 @@ class RealtimeServices {
   Future<dynamic> read(String collection) async {
     try {
       DataSnapshot refs = await _realtime.ref(collection).get();
-      List data = refs.children.toList();
-      print("key: ${data[0].key}, value: ${data[0].value}");
+      List children = refs.children.toList();
+      List<Map> data = [];
+      for (int index = 0; index < children.length; index++) {
+        data.add(children[index].value);
+      }
       return data;
     } catch (error) {
       debugPrint(error.toString());

@@ -14,7 +14,7 @@ class HomeController extends GetxController {
   }
 
   void checkUsers() {
-    if (response is List<Map<String, dynamic>>) {
+    if (response is List<Map>) {
       List<UserModel> myUsers = (response as List).map((user) => UserModel.fromMapToModel(user)).toList();
       users = myUsers;
       update();

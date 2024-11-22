@@ -27,6 +27,10 @@ class HomeScreen extends GetWidget<HomeController> {
             itemBuilder: (BuildContext context, int index) {
               UserModel user = controller.users[index];
               return ListTile(
+                onTap: () => Get.toNamed(
+                  "/addUpdate",
+                  arguments: user,
+                ),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -59,6 +63,19 @@ class HomeScreen extends GetWidget<HomeController> {
             },
           );
         },
+      ),
+      floatingActionButton: InkWell(
+        onTap: () => Get.toNamed("/addUpdate"),
+        child: Container(
+            padding: const EdgeInsets.all(10),
+            decoration: BoxDecoration(
+              color: Colors.blue,
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: const Icon(
+              Icons.add,
+              color: Colors.white,
+            )),
       ),
     );
   }

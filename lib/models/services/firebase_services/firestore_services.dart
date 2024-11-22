@@ -19,7 +19,7 @@ class FirestoreServices {
   Future<dynamic> read(String collection) async {
     try {
       QuerySnapshot<Map<String, dynamic>> documents = await _firestore.collection(collection).get();
-      List data = documents.docs.map((element) => element.data()).toList();
+      List<Map> data = documents.docs.map((element) => element.data()).toList();
       return data;
     } catch (error) {
       debugPrint(error.toString());

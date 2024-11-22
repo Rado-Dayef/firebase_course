@@ -25,7 +25,7 @@ class UserModel {
     };
   }
 
-  factory UserModel.fromMapToModel(Map<String, dynamic> map) {
+  factory UserModel.fromMapToModel(Map map) {
     return UserModel(
       map["id"],
       age: map["age"],

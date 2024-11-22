@@ -1,4 +1,5 @@
 import 'package:firebase_course/constants/bindings.dart';
+import 'package:firebase_course/views/screens/add_update_screen.dart';
 import 'package:firebase_course/views/screens/home_screen.dart';
 import 'package:firebase_course/views/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +19,10 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: "/splash",
           page: () => const SplashScreen(),
+        ),
+        GetPage(
+          name: "/addUpdate",
+          page: () => const AddUpdateScreen(),
         ),
       ],
       initialRoute: "/splash",

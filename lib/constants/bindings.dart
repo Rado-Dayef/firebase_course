@@ -1,3 +1,4 @@
+import 'package:firebase_course/controllers/add_update_controller.dart';
 import 'package:firebase_course/controllers/home_controller.dart';
 import 'package:firebase_course/controllers/splash_controller.dart';
 import 'package:get/get.dart';
@@ -11,6 +12,10 @@ class AppBinding extends Bindings {
     );
     Get.lazyPut(
       () => SplashController(),
+      fenix: true,
+    );
+    Get.lazyPut(
+      () => AddUpdateController(),
       fenix: true,
     );
   }
